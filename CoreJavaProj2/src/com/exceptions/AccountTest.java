@@ -1,6 +1,6 @@
 package com.exceptions;
 
-
+import java.io.*; 
 
 
  class Account1 implements AutoCloseable {
@@ -18,11 +18,14 @@ package com.exceptions;
  public class AccountTest
  {
 	   public static void main(String args[])
+	  
+	   
+	   
 	   {
-		   try(Account1 a=new Account1(10000))
+		   try(Account1 a=new Account1(10000);FileInputStream input = new FileInputStream("file.txt"))
 		   {
 			  System.out.println("welcome to account");
-			  int x=1000/0;
+			  int x=1000/1;
 		   }
 		   catch(Exception e)
 		   {

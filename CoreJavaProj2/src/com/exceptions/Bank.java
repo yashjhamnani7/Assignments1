@@ -38,16 +38,20 @@ public static double withdraw(double balance,double with) throws InsusfficientBa
 class Bank
 {
 	  public static void main(String args[])
+	//if we use throws here in this line, then it//will only telll the complier that might be an exception but does not handle it,
+	  //if exception truly occurs the program will not execute;
+	   
 	  {
-		  double bal=500;
+		  double bal=10000;
 		try {
 			bal=Account.withdraw(bal,1000);
 			System.out.println("balance is "+bal);
 		} catch (InsusfficientBalanceException e) {
-			// TODO Auto-generated catch block
+			 
 			e.printStackTrace();
 		}
-			//bal=Account.withdraw(bal,1000);
+	  
+		//	bal=Account.withdraw(bal,1000);
 			//System.out.println("balance is "+bal);
 		  
 			 
