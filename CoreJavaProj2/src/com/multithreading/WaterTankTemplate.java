@@ -13,7 +13,7 @@ public class WaterTankTemplate extends Frame {
 	public static int percent = 70;
 	public WaterTankTemplate() {
 		super("Ball game");
-		setBackground(Color.CYAN);
+		setBackground(Color.PINK);
 		setSize(500, 500);
 		setVisible(true);
 		this.addWindowListener(new WindowAdapter() {

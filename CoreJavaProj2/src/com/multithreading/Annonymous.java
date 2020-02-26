@@ -2,7 +2,7 @@ package com.multithreading;
 
 
 
-public class Annonymous extends Thread{
+public class Annonymous extends Thread {
 
 	
 
