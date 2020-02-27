@@ -10,8 +10,8 @@ class Banner
 		 {
 			   s=s1.charAt(s1.length()-1);
 			   s1 = new StringBuilder(s+s1.substring(0,s1.length()-1));
-			   System.out.println("\r"+s1);
-			   Thread.sleep(500);
+			   System.out.println(s1);
+			   Thread.sleep(200);
 		}
      }
    }

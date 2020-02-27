@@ -71,7 +71,7 @@ class ComplexNumber1
 }			
 
 
-
+package com.classandobjects;
 
 public class ComplexNumber1Test
     {

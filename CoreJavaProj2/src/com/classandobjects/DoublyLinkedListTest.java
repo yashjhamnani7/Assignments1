@@ -1,3 +1,4 @@
+package com.classandobjects;
 class Node
     {
 	 int data;

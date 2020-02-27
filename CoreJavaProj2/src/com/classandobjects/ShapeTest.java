@@ -1,3 +1,4 @@
+package com.classandobjects;
 class Shape
    {
      abstract void draw();

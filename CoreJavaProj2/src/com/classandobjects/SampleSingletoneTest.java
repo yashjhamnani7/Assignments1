@@ -1,3 +1,4 @@
+package com.classandobjects;
 class SampleSingletone{
 		private static SampleSingletone ref = null;
 			private SampleSingletone()
