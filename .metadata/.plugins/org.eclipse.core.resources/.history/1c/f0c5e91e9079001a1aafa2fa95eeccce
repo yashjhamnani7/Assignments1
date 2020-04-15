@@ -1,0 +1,19 @@
+package com.hibernate.util;
+
+public class EntityConvertor {
+	
+	public static com.hibernate.hibernate.entity.Account convertAccountJsonToHibernate(com.hibernate.entity.Account accJson) {
+		com.hibernate.hibernate.entity.Account accDB = new com.hibernate.hibernate.entity.Account();
+		accDB.setName(accJson.getName());
+		accDB.setBalance(accJson.getBalance());
+		return accDB;
+	}
+	
+	public static com.hibernate.entity.Account convertAccountHibernateToJson(com.hibernate.hibernate.entity.Account accDB) {
+		com.hibernate.entity.Account accJson = new com.hibernate.entity.Account();
+		accJson.setName(accDB.getName());
+		accJson.setBalance(accDB.getBalance());
+		accJson.setId(accDB.getId());
+		return accJson;
+	}
+}

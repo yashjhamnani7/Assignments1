@@ -1,0 +1,131 @@
+----POJO------
+
+package com.spring.FirstSpringDemo;
+
+import org.springframework.beans.factory.BeanNameAware;
+
+public class Student implements BeanNameAware {
+
+	private int id;
+	private String name;
+	private int marks;
+	
+	public Student()
+	{
+		super();
+		System.out.println("Inside Constructor");
+	}
+	public static void init()
+	{
+		System.out.println("Initialized");
+	}
+	public static void destroy()
+	{
+		System.out.println("Destroyed");
+	}
+
+	public Student(int id, String name, int marks) {
+		super();
+		System.out.println("Constructor argument called");
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMarks() {
+		return marks;
+	}
+
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+	}
+	public void setBeanName(String name) {
+		
+		System.out.println("Inside BeanAware Inteface");
+		this.name=name;
+		
+	}
+	
+}
+
+----Main-----
+
+package com.spring.FirstSpringDemo;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		
+		ConfigurableApplicationContext ctx=new ClassPathXmlApplicationContext("StudentSpring.xml");
+		Student s=(Student)ctx.getBean("student");
+		System.out.println(s.toString());
+		ctx.registerShutdownHook();
+	}
+
+}
+
+
+----xml-----
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<context:annotation-config/>
+
+<bean id="student" class="com.spring.FirstSpringDemo.Student" init-method="init" destroy-method="destroy">
+<property name="id" value="111"/>
+<property name="name" value="Anuj"/>
+<property name="marks" value="76"/>
+</bean>
+<bean class="com.spring.FirstSpringDemo.MessageBeanPostProcessor"/>
+</beans>
+
+----MessageBean-----
+
+package com.spring.FirstSpringDemo;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class MessageBeanPostProcessor implements BeanPostProcessor {
+
+	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+		System.out.println("\tpostProcessAfterInitialization: " + beanName);
+		return bean;
+	}
+
+	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+		System.out.println("\tpostProcessBeforeInitialization: " + beanName);
+		return bean;
+	}
+
+}

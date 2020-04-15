@@ -1,0 +1,129 @@
+###############################################################
+#                          WARNING!!!!                        #
+# This is a sandbox environment. Using personal credentials   #
+# is HIGHLY! discouraged. Any consequences of doing so are    #
+# completely the user's responsibilites.                      #
+#                                                             #
+# The PWD team.                                               #
+###############################################################
+[node1] (local) root@192.168.0.8 ~
+$ docker images -a
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[node1] (local) root@192.168.0.8 ~
+$ docker pull mysql
+Using default tag: latest
+latest: Pulling from library/mysql
+c499e6d256d6: Pull complete 
+22c4cdf4ea75: Pull complete 
+6ff5091a5a30: Pull complete 
+2fd3d1af9403: Pull complete 
+0d9d26127d1d: Pull complete 
+54a67d4e7579: Pull complete 
+fe989230d866: Pull complete 
+3a808704d40c: Pull complete 
+826517d07519: Pull complete 
+69cd125db928: Pull complete 
+b5c43b8c2879: Pull complete 
+1811572b5ea5: Pull complete 
+Digest: sha256:b69d0b62d02ee1eba8c7aeb32eba1bb678b6cfa4ccfb211a5d7931c7755dc4a8
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+[node1] (local) root@192.168.0.8 ~
+$ docker images -a
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+mysql               latest              9228ee8bac7a        10 days ago         547MB
+[node1] (local) root@192.168.0.8 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[node1] (local) root@192.168.0.8 ~
+$ docker run mysql
+2020-04-10 06:56:18+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
+2020-04-10 06:56:18+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2020-04-10 06:56:18+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
+2020-04-10 06:56:18+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+        You need to specify one of MYSQL_ROOT_PASSWORD, MYSQL_ALLOW_EMPTY_PASSWORD and MYSQL_RANDOM_ROOT_PASSWORD
+[node1] (local) root@192.168.0.8 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+df9596b7f2b2        mysql               "docker-entrypoint.s…"   24 seconds ago      Exited (1) 18 seconds ago                       affectionate_brown
+[node1] (local) root@192.168.0.8 ~
+$ docker stop df
+df
+[node1] (local) root@192.168.0.8 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+df9596b7f2b2        mysql               "docker-entrypoint.s…"   50 seconds ago      Exited (1) 45 seconds ago                       affectionate_brown
+[node1] (local) root@192.168.0.8 ~
+$ docker stop df95
+df95
+[node1] (local) root@192.168.0.8 ~
+$ docker ps - a
+"docker ps" accepts no arguments.
+See 'docker ps --help'.
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+[node1] (local) root@192.168.0.8 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                          PORTS               NAMES
+df9596b7f2b2        mysql               "docker-entrypoint.s…"   About a minute ago   Exited (1) About a minute ago                       affectionate_brown
+[node1] (local) root@192.168.0.8 ~
+$ docker rm df
+df
+[node1] (local) root@192.168.0.8 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[node1] (local) root@192.168.0.8 ~
+$ docker image -a
+unknown shorthand flag: 'a' in -a
+See 'docker image --help'.
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+
+[node1] (local) root@192.168.0.8 ~
+$ docker images -a
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+mysql               latest              9228ee8bac7a        10 days ago         547MB
+[node1] (local) root@192.168.0.8 ~
+$ docker rmi 92
+Untagged: mysql:latest
+Untagged: mysql@sha256:b69d0b62d02ee1eba8c7aeb32eba1bb678b6cfa4ccfb211a5d7931c7755dc4a8
+Deleted: sha256:9228ee8bac7a8143818a7b028ee3386ea93e30a8f2e8bbf1440ca1ea3c26aa3e
+Deleted: sha256:86af1c9751313cd1e69f821252d81930d13e637dd71c14ac3415cc410f37eee9
+Deleted: sha256:7efadee52180bcf5f807e144054352d25d1682a6da1ff0f98f3ac31a1db72656
+Deleted: sha256:dcea680c013ed3614c13aab60528a0077889f28e5266f29dbf4e22b6d0ff99e4
+Deleted: sha256:cb7f155e56af1df8fa767b4c8458338441e769e87653040fc7f4ed267f137d3c
+Deleted: sha256:a89f3417282a3b5b7a5244e8dc6a8457758637bfdd20d581d8001711dd852ba4
+Deleted: sha256:48a05a610ee50ba6b31485bdcc56e1a9b078ee5c313c0389f51c0945b1c79e7f
+Deleted: sha256:3fa467b922ac62dd90f3f5619593efe0863268e61c2388ad722505bf16a6f396
+Deleted: sha256:1489aeb916b23b754adae8188a23acc79094d884af22b97525230c5dfa080fad
+Deleted: sha256:27518404ef7be035417fac8fdba7bfc3dff01964f5ce7e1b9f00d3732983fe3a
+Deleted: sha256:99371f27899824a4617338da5d039d5a94b6fe737655b1af1a4d63490afdcc5e
+Deleted: sha256:4bb513e8eeaea15c5199b1fbee849d048b889877afd4e30599c7431db926f4ff
+Deleted: sha256:c3a984abe8a88059915bb6c7a1d249fd1ccc16d931334ac8816540b0eb686b45
+[node1] (local) root@192.168.0.8 ~
+$ docker images -a
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[node1] (local) root@192.168.0.8 ~
+$ ^C
+[node1] (local) root@192.168.0.8 ~
+$ 
