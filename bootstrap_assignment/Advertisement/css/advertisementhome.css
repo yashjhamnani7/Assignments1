@@ -1,0 +1,44 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+  background-image: url('images/back.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: times new roman;
+   }
+
+.navbar-style
+{
+	color: black;
+	border:black;
+   box-shadow: -1px 1px 60px 10px white; 
+   text-transform: uppercase;
+}
+
+.big-text
+{
+	font-size: 52px;
+	margin:20px 0px;
+	color:darkorange;
+}
+ul
+{
+	color: white;
+	border:black;
+	font-size: 20px;
+
+}
+.banner-image{
+	align-self: right;
+}
+li:hover{
+	color:black;
+	background:white;
+
+
+}
+
+
+

@@ -1,0 +1,101 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+  background-image: url('images/back.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: times new roman;
+   }
+
+.navbar-style
+{
+	color: black;
+
+   box-shadow: -1px 1px 60px 10px white; 
+   text-transform: uppercase;
+}
+
+.big-text
+{
+	font-size: 52px;
+	margin:20px 0px;
+	color:darkorange;
+}
+ul
+{
+	color: white;
+	border:black;
+	font-size: 20px;
+
+}
+.banner-image{
+	align-self: right;
+}
+li:hover{
+	color:black;
+	background:white;
+
+
+}
+a.btn
+{
+	color: white;
+	border:black;
+	font-size: 20px;
+	margin:30px 10px;
+	font-size: 20px;
+    padding:0px;
+    width:100px;
+    border-radius:20px;
+    box-shadow: -1px 1px 15px 10px black; 
+    background:transparent;
+
+}
+a.btn:hover
+{
+	background:white;
+	color:black;
+}
+
+#Contact {
+    height: 100vh;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("images/back.jpg");
+    background-size: cover; /* Add this line */
+    background-position: center center; /* Add this line */
+    background-repeat: no-repeat; /* Add this line */
+    background-attachment: fixed; /* Add this line */
+}
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block;
+ /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
